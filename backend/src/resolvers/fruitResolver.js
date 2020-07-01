@@ -10,23 +10,20 @@ const fruitResolver = {
     },
   },
   Mutation: {
-    async createFruit(_, { fruit }) {
+    createFruit(_, { fruit }) {
       const newFruit = new Fruit(fruit);
       return newFruit.save();
     },
-    async updateFruit(_, { id, fruit }) {
-      const updatedFruit = await Fruit.findByIdAndUpdate(id, fruit, {
+    updateFruit(_, { id, fruit }) {
+      return Fruit.findByIdAndUpdate(id, fruit, {
         new: true,
         useFindAndModify: false,
       });
-
-      return updatedFruit;
     },
-    async deleteFruit(_, { id }) {
-      const removedFruit = await Fruit.findByIdAndRemove(id, {
+    deleteFruit(_, { id }) {
+      return Fruit.findByIdAndRemove(id, {
         useFindAndModify: false,
       });
-      return removedFruit;
     },
   },
 };
