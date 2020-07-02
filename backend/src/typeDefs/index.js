@@ -2,8 +2,6 @@ const query = require("./query");
 const mutation = require("./mutation");
 const types = require("./types");
 
-const schema = [query, mutation];
-
-const typeDefs = [...schema, types];
+const typeDefs = [query, mutation, types];
 
 module.exports = typeDefs;
