@@ -1,0 +1,6 @@
+input,
+button {
+  padding: 10px;
+  margin: 10px;
+  font-size: calc(10px + 1vmin);
+}

@@ -14,7 +14,7 @@ const db = {
   name: process.env.DB_NAME,
 };
 
-const dbUri = `mongodb+srv://${db.user}:${db.pass}@${db.host}/${db.name}?retryWrites=true&w=majority`;
+const dbUri = `mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false`;
 const dbOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
