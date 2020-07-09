@@ -2,7 +2,7 @@ import React from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { Link, useHistory } from "react-router-dom";
-import { FRUITS } from "./Fruits";
+import { GET_FRUITS } from "./Fruits";
 
 const CREATE_FRUIT = gql`
   mutation UpdateFruit($name: String!, $sugar: String!, $calories: String!) {
@@ -24,9 +24,9 @@ const CreateFruit = () => {
 
   const [createFruit, { error }] = useMutation(CREATE_FRUIT, {
     update(cache, { data: { createFruit } }) {
-      const { fruits } = cache.readQuery({ query: FRUITS });
+      const { fruits } = cache.readQuery({ query: GET_FRUITS });
       cache.writeQuery({
-        query: FRUITS,
+        query: GET_FRUITS,
         data: { fruits: fruits.concat([createFruit]) },
       });
     },

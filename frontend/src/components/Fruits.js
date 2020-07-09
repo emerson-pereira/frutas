@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { Link } from "react-router-dom";
 
-export const FRUITS = gql`
+export const GET_FRUITS = gql`
   {
     fruits {
       id
@@ -13,7 +13,7 @@ export const FRUITS = gql`
 `;
 
 const FruitsList = () => {
-  const { loading, error, data } = useQuery(FRUITS);
+  const { loading, error, data } = useQuery(GET_FRUITS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;

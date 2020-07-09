@@ -2,19 +2,7 @@ import React from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { useParams, Link, useHistory } from "react-router-dom";
-
-const GET_FRUIT_BY_ID = gql`
-  query GetFruit($id: ID!) {
-    fruit(id: $id) {
-      id
-      name
-      nutritions {
-        sugar
-        calories
-      }
-    }
-  }
-`;
+import { GET_FRUIT_BY_ID } from "./Fruit";
 
 const UPDATE_FRUIT = gql`
   mutation UpdateFruit(
@@ -118,7 +106,7 @@ const EditFruit = () => {
         </p>
         <p className="App-close-btn">
           <Link to="/">
-            <button>✖</button>
+            <button type="button">✖</button>
           </Link>
         </p>
         <p>

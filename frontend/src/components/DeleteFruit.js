@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { useParams, Link, useHistory } from "react-router-dom";
-import { FRUITS } from "./Fruits";
+import { GET_FRUITS } from "./Fruits";
 import { GET_FRUIT_BY_ID } from "./Fruit";
 
 const DELETE_FRUIT = gql`
@@ -10,6 +10,10 @@ const DELETE_FRUIT = gql`
     deleteFruit(id: $id) {
       id
       name
+      nutritions {
+        calories
+        sugar
+      }
     }
   }
 `;
@@ -24,7 +28,7 @@ const DeleteFruit = () => {
 
   const [deleteFruit, { error: mutationError }] = useMutation(DELETE_FRUIT, {
     update(cache) {
-      const { fruits } = cache.readQuery({ query: FRUITS });
+      const { fruits } = cache.readQuery({ query: GET_FRUITS });
 
       const deletedIndex = fruits.findIndex((fruit) => fruit.id === id);
       const updatedCache = [
@@ -32,7 +36,7 @@ const DeleteFruit = () => {
         ...fruits.slice(deletedIndex + 1, fruits.length),
       ];
       cache.writeQuery({
-        query: FRUITS,
+        query: GET_FRUITS,
         data: {
           fruits: updatedCache,
         },
