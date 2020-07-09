@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { Link } from "react-router-dom";
 
-const FRUITS = gql`
+export const FRUITS = gql`
   {
     fruits {
       id
@@ -25,18 +25,18 @@ const FruitsList = () => {
           data.fruits.map(({ name, id }) => (
             <li key={id}>
               <span>{name}</span>
-              <div>
-                <Link className="App-inline-link" to={`/fruits/${id}`}>
+              <div className="App-item-actions">
+                <Link to={`/fruit/${id}`}>
                   <span role="img" aria-label="Visualizar">
                     👀
                   </span>
                 </Link>
-                <Link className="App-inline-link" to={`/fruits/${id}/edit`}>
+                <Link to={`/editFruit/${id}`}>
                   <span role="img" aria-label="Editar">
                     ✏️
                   </span>
                 </Link>
-                <Link className="App-inline-link" to={`/fruits/${id}/delete`}>
+                <Link to={`/deleteFruit/${id}`}>
                   <span role="img" aria-label="Excluir">
                     ❌
                   </span>
@@ -46,9 +46,11 @@ const FruitsList = () => {
           ))}
       </ul>
 
-      <Link to={`/fruits/create`}>
-        <button>Nova Fruta</button>
-      </Link>
+      <p>
+        <Link to="/createFruit">
+          <button>Nova Fruta</button>
+        </Link>
+      </p>
     </>
   );
 };

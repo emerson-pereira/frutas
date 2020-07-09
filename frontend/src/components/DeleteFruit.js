@@ -1,7 +1,79 @@
 import React from "react";
+import { useQuery, useMutation } from "@apollo/react-hooks";
+import { gql } from "apollo-boost";
+import { useParams, Link, useHistory } from "react-router-dom";
+import { FRUITS } from "./Fruits";
+import { GET_FRUIT_BY_ID } from "./Fruit";
+
+const DELETE_FRUIT = gql`
+  mutation DeleteFruit($id: String) {
+    deleteFruit(id: $id) {
+      id
+      name
+    }
+  }
+`;
 
 const DeleteFruit = () => {
-  return <p>DeleteFruit</p>;
+  const history = useHistory();
+  const { id } = useParams();
+
+  const { loading, error, data } = useQuery(GET_FRUIT_BY_ID, {
+    variables: { id },
+  });
+
+  const [deleteFruit, { error: mutationError }] = useMutation(DELETE_FRUIT, {
+    update(cache) {
+      const { fruits } = cache.readQuery({ query: FRUITS });
+
+      const deletedIndex = fruits.findIndex((fruit) => fruit.id === id);
+      const updatedCache = [
+        ...fruits.slice(0, deletedIndex),
+        ...fruits.slice(deletedIndex + 1, fruits.length),
+      ];
+      cache.writeQuery({
+        query: FRUITS,
+        data: {
+          fruits: updatedCache,
+        },
+      });
+    },
+    onCompleted() {
+      history.push(`/`);
+    },
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error || mutationError) return <p>Error :(</p>;
+
+  return (
+    <div>
+      <form
+        className="App-viewbox"
+        onSubmit={(e) => {
+          e.preventDefault();
+
+          deleteFruit({
+            variables: { id },
+          });
+        }}
+      >
+        <p>
+          Excluir <strong>{data.fruit.name}</strong>?
+        </p>
+        <p className="App-close-btn">
+          <Link to="/">
+            <button>✖</button>
+          </Link>
+        </p>
+        <p>
+          <button className="App-btn" type="submit">
+            Excluir
+          </button>
+        </p>
+      </form>
+    </div>
+  );
 };
 
 export default DeleteFruit;

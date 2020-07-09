@@ -46,7 +46,7 @@ const EditFruit = () => {
   });
   const [updateFruit, { error: mutationError }] = useMutation(UPDATE_FRUIT, {
     onCompleted() {
-      history.push(`/fruits/${id}`);
+      history.push(`/`);
     },
   });
 
@@ -60,6 +60,7 @@ const EditFruit = () => {
   return (
     <div>
       <form
+        className="App-viewbox"
         onSubmit={(e) => {
           e.preventDefault();
 
@@ -115,10 +116,16 @@ const EditFruit = () => {
             />
           </label>
         </p>
-        <button type="submit">Salvar</button>
-        <Link to="/fruits">
-          <button>Fechar</button>
-        </Link>
+        <p className="App-close-btn">
+          <Link to="/">
+            <button>✖</button>
+          </Link>
+        </p>
+        <p>
+          <button className="App-btn" type="submit">
+            Salvar
+          </button>
+        </p>
       </form>
       {mutationError && <p>Error :( Please try again</p>}
     </div>

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Fruits from "./components/Fruits";
 import Fruit from "./components/Fruit";
@@ -16,21 +11,18 @@ const Routes = () => (
   <Router>
     <Switch>
       <Route exact path="/">
-        <Redirect to="/fruits" />
-      </Route>
-      <Route exact path="/fruits">
         <Fruits />
       </Route>
-      <Route exact path="/fruits/:id">
+      <Route path="/fruit/:id">
         <Fruit />
       </Route>
-      <Route exact path="/fruits/create">
+      <Route path="/createFruit">
         <CreateFruit />
       </Route>
-      <Route exact path="/fruits/:id/edit">
+      <Route path="/editFruit/:id">
         <EditFruit />
       </Route>
-      <Route exact path="/fruits/:id/delete">
+      <Route path="/deleteFruit/:id">
         <DeleteFruit />
       </Route>
     </Switch>
