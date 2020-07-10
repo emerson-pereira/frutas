@@ -12,6 +12,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
+        <div className="App-header">
+          <h1>Frutas</h1>
+        </div>
         <div className="App-body">
           <Routes />
         </div>
