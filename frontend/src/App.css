@@ -13,56 +13,32 @@
   color: white;
 }
 
-input,
-button {
-  padding: 10px;
-  font-size: calc(10px + 1vmin);
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-button.App-btn {
-  max-width: 120px;
-  width: 100%;
-}
-
-button.App-btn.secondary {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-}
-
 .App-viewbox {
   position: relative;
 }
 
-p.App-close-btn {
+.App-close-btn {
   position: absolute;
   top: -100px;
   right: -100px;
 }
 
-p.App-close-btn button {
+.App-close-btn button {
   background: none;
   border: 0;
   color: white;
   font-size: calc(10px + 2vmin);
 }
 
-ul {
-  list-style: none;
-  margin: 20px 0;
-  padding: 0;
+.App-btn {
+  max-width: 120px;
+  width: 100%;
 }
 
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 10px;
-  margin: 10px;
+.App-btn.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
 }
 
 .App-item-actions {

@@ -39,7 +39,7 @@ const EditFruit = () => {
   });
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error || mutationError) return <p>Error :(</p>;
 
   let nameInput;
   let sugarInput;
@@ -115,7 +115,6 @@ const EditFruit = () => {
           </button>
         </p>
       </form>
-      {mutationError && <p>Error :( Please try again</p>}
     </div>
   );
 };

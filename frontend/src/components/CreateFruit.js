@@ -22,7 +22,7 @@ const CREATE_FRUIT = gql`
 const CreateFruit = () => {
   const history = useHistory();
 
-  const [createFruit, { error }] = useMutation(CREATE_FRUIT, {
+  const [createFruit, { loading, error }] = useMutation(CREATE_FRUIT, {
     update(cache, { data: { createFruit } }) {
       const { fruits } = cache.readQuery({ query: GET_FRUITS });
       cache.writeQuery({
@@ -35,6 +35,7 @@ const CreateFruit = () => {
     },
   });
 
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   let nameInput;
