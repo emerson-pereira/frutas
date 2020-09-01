@@ -17,13 +17,10 @@ const fruitResolver = {
     updateFruit(_, { id, fruit }) {
       return Fruit.findByIdAndUpdate(id, fruit, {
         new: true,
-        useFindAndModify: false,
       });
     },
     deleteFruit(_, { id }) {
-      return Fruit.findByIdAndRemove(id, {
-        useFindAndModify: false,
-      });
+      return Fruit.findByIdAndRemove(id);
     },
   },
 };

@@ -18,6 +18,7 @@ const dbUri = `mongodb://localhost:27017/?readPreference=primary&appname=MongoDB
 const dbOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false,
 };
 
 mongoose
