@@ -10,16 +10,22 @@ Faz parte da minha série de artigos sobre GraphQL que faz uma introdução à t
 
 O que é essa tecnologia e como pode ser utilizada.
 
-#### 👉 [Ver introdução](https://medium.com/@emerson_pereira/introdu%C3%A7%C3%A3o-a-graphql-cbd1697784bf)
+#### 👉 [GraphQL: O que é e como usar](https://emersonpereira.me/blog/introducao-a-graphql/)
 
 ## Tutorial Backend
 
 Parte de servidor. Tutorial de como montar uma API em GraphQL.
 
-#### 👉 [Ver Tutorial Backend](https://medium.com/@emerson_pereira/montando-api-graphql-em-node-js-com-apollo-e-mongodb-6b5089ff10d3)
+#### 👉 [Montando API GraphQL em Node.js com Apollo e MongoDB](https://emersonpereira.me/blog/tutorial-api-graphql/)
 
 ## Tutorial Frontend
 
 Parte de cliente. Faz-se uma UI com as quatro operações básicas (CRUD), e demonstra como usar GraphQL para conectar à API montada no Tutorial 1.
 
-#### Tutorial em desenvolvimento...
+#### 👉 [Consumindo API GraphQL em React.js com Apollo client](https://emersonpereira.me/blog/tutorial-react-graphql/)
+
+### Demo
+
+- **Versão online da API**: [graphql-frutas.herokuapp.com](https://graphql-frutas.herokuapp.com/)
+
+- **Versão online App React**: [codesandbox.io/s/graphql-frutas-4isf8](https://codesandbox.io/s/graphql-frutas-4isf8)
