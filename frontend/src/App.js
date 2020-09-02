@@ -1,11 +1,11 @@
 import React from "react";
-import { ApolloProvider } from "@apollo/react-hooks";
-import ApolloClient from "apollo-boost";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import "./App.css";
 import Routes from "./routes";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
+  cache: new InMemoryCache(),
 });
 
 function App() {

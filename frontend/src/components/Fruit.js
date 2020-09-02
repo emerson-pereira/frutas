@@ -1,6 +1,5 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
+import { gql, useQuery } from "@apollo/client";
 import { useParams, Link } from "react-router-dom";
 
 export const GET_FRUIT_BY_ID = gql`

@@ -1,6 +1,5 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
+import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 
 export const GET_FRUITS = gql`
@@ -27,17 +26,17 @@ const FruitsList = () => {
               <span>{name}</span>
               <div className="App-item-actions">
                 <Link to={`/fruit/${id}`}>
-                  <span role="img" aria-label="Visualizar">
+                  <span role="img" aria-label="visualizar">
                     👀
                   </span>
                 </Link>
                 <Link to={`/editFruit/${id}`}>
-                  <span role="img" aria-label="Editar">
+                  <span role="img" aria-label="editar">
                     ✏️
                   </span>
                 </Link>
                 <Link to={`/deleteFruit/${id}`}>
-                  <span role="img" aria-label="Excluir">
+                  <span role="img" aria-label="excluir">
                     ❌
                   </span>
                 </Link>

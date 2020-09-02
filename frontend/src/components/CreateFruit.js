@@ -1,6 +1,5 @@
 import React from "react";
-import { useMutation } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
+import { gql, useMutation } from "@apollo/client";
 import { Link, useHistory } from "react-router-dom";
 import { GET_FRUITS } from "./Fruits";
 
@@ -103,7 +102,7 @@ const CreateFruit = () => {
         </p>
         <p className="App-close-btn">
           <Link to="/">
-            <button>✖</button>
+            <button>X</button>
           </Link>
         </p>
         <p>

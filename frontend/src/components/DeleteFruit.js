@@ -1,6 +1,5 @@
 import React from "react";
-import { useQuery, useMutation } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
+import { gql, useQuery, useMutation } from "@apollo/client";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { GET_FRUITS } from "./Fruits";
 import { GET_FRUIT_BY_ID } from "./Fruit";
@@ -67,7 +66,7 @@ const DeleteFruit = () => {
         </p>
         <p className="App-close-btn">
           <Link to="/">
-            <button>✖</button>
+            <button>X</button>
           </Link>
         </p>
         <p>
