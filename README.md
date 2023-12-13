@@ -1,4 +1,4 @@
-# Frutas
+-# Frutas
 
 Um aplicativo full-stack em GraphQL para gerenciar frutas.
 
@@ -10,19 +10,19 @@ Faz parte da minha série de artigos sobre GraphQL que faz uma introdução à t
 
 O que é essa tecnologia e como pode ser utilizada.
 
-#### 👉 [GraphQL: O que é e como usar](https://emersonpereira.me/blog/introducao-a-graphql/)
+#### 👉 [GraphQL: O que é e como usar](https://emersonpereira.tech/introducao-a-graphql/)
 
 ## Tutorial Backend
 
 Parte de servidor. Tutorial de como montar uma API em GraphQL.
 
-#### 👉 [Montando API GraphQL em Node.js com Apollo e MongoDB](https://emersonpereira.me/blog/tutorial-api-graphql/)
+#### 👉 [Montando API GraphQL em Node.js com Apollo e MongoDB](https://emersonpereira.tech/tutorial-api-graphql/)
 
 ## Tutorial Frontend
 
 Parte de cliente. Faz-se uma UI com as quatro operações básicas (CRUD), e demonstra como usar GraphQL para conectar à API montada no Tutorial 1.
 
-#### 👉 [Consumindo API GraphQL em React.js com Apollo client](https://emersonpereira.me/blog/tutorial-react-graphql/)
+#### 👉 [Consumindo API GraphQL em React.js com Apollo client](https://emersonpereira.tech/tutorial-react-graphql/)
 
 ### Demo
 
